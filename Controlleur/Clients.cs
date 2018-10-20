@@ -35,5 +35,70 @@ namespace Madera.Controlleur
             }
             return lesClients;
         }
+        public static Boolean CreerClient(Client client)
+        {
+            Boolean test = false;
+            try
+            {
+                connexion.execWrite("INSERT INTO Client" +
+                    "(Nom, Prenom, Adresse, CodePostal, Ville," +
+                    "Email, Fax, Mobile) " +
+                    "VALUES ('"
+                    + client.Nom + "', '"
+                    + client.Prenom + "', '"
+                    + client.Adresse + "', '"
+                    + client.CodePostal + "', '"
+                    + client.Ville + "', '"
+                    + client.Email + "', '"
+                    + client.Fax + "', '"
+                    + client.Mobile + "');");
+                test = true;
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e);
+                test = false;
+            }
+            return test;
+        }
+        public static Boolean ModifierClient(Client client)
+        {
+            Boolean test = false;
+            try
+            {
+                connexion.execWrite("UPDATE Client Id = '" + client.Id + "'," +
+                    " Nom = '" + client.Nom + "'," +
+                    " Prenom = '" + client.Prenom + "', " +
+                    " Adresse = '" + client.Adresse + "', " +
+                    " CodePostal = '" + client.CodePostal + "', " +
+                    " Ville = '" + client.Ville + "', " +
+                    " Email = '" + client.Email + "', " +
+                    " Fax = '" + client.Fax + "', " +
+                    " Mobile = '" + client.Mobile + "' ;");
+                test = true;
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e);
+                test = false;
+            }
+            return test;
+        }
+        public static Boolean SupprimerClient(Client client)
+        {
+            bool test = false;
+            try
+            {
+                connexion.execWrite("DELETE FROM Client WHERE Id = "
+                    + client.Id + " ;");
+                test = true;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                test = false;
+            }
+            return test;
+        }
     }
 }

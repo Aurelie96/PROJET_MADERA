@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Madera.Modele
 {
-    class Client
+    public class Client
     {
         public int Id { get; set; }
         public string Nom { get; set; }

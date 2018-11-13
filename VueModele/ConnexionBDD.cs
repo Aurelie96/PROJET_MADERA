@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Madera.Controlleur
+namespace Madera.VueModele
 {
     class ConnexionBDD
     {

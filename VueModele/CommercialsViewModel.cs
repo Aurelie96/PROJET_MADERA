@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Madera.Controlleur
+namespace Madera.VueModele
 {
-    class Commercials
+    public class CommercialsViewModel
     { 
         private static ConnexionBDD connexion = new ConnexionBDD();
         public static List<Commercial> chargerCommercial()

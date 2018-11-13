@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Madera.Controlleur
+namespace Madera.VueModele
 {
-    class Clients
+    public class ClientsViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Client> chargerClient()
+        public static List<Client> ChargerClient()
         {
             List<Client> lesClients = new List<Client>();
             try

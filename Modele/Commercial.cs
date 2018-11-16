@@ -8,18 +8,18 @@ namespace Madera.Modele
 {
     public class Commercial
     {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string Prenom { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public int idCommercial { get; set; }
+        public string nomCommercial { get; set; }
+        public string prenomCommercial { get; set; }
+        public string loginCommercial { get; set; }
+        public string motDePasseCommercial { get; set; }
         public Commercial(int id, string nom, string prenom, string login, string password)
         {
-            this.Id = id;
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Login = login;
-            this.Password = password;
+            this.idCommercial = id;
+            this.nomCommercial = nom;
+            this.prenomCommercial = prenom;
+            this.loginCommercial = login;
+            this.motDePasseCommercial = password;
         }
     }
 }

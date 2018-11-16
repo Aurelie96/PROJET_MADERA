@@ -54,6 +54,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Modele\Composant.cs" />
+    <Compile Include="Modele\Couverture.cs" />
+    <Compile Include="Modele\Etat.cs" />
+    <Compile Include="Modele\Famille.cs" />
+    <Compile Include="Modele\Forme.cs" />
+    <Compile Include="Modele\Gamme.cs" />
+    <Compile Include="Modele\Module.cs" />
+    <Compile Include="Modele\ObjectifModule.cs" />
+    <Compile Include="Modele\Plan.cs" />
+    <Compile Include="Modele\Projet.cs" />
+    <Compile Include="Modele\Section.cs" />
+    <Compile Include="Modele\Sol.cs" />
+    <Compile Include="VueModele\ComposantViewModel.cs" />
+    <Compile Include="VueModele\CouverturesViewModel.cs" />
+    <Compile Include="VueModele\DevisViewModel.cs" />
+    <Compile Include="VueModele\EtatsViewModel.cs" />
+    <Compile Include="VueModele\FamilleViewModel.cs" />
+    <Compile Include="VueModele\FormesViewModel.cs" />
+    <Compile Include="VueModele\GammeViewModel.cs" />
+    <Compile Include="VueModele\ModuleViewModel.cs" />
+    <Compile Include="VueModele\ObjectifModuleViewModel.cs" />
+    <Compile Include="VueModele\PlanViewModel.cs" />
+    <Compile Include="VueModele\ProjetViewModel.cs" />
+    <Compile Include="VueModele\SectionViewModel.cs" />
+    <Compile Include="VueModele\SolViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,8 +87,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VueModele\Clients.cs" />
-    <Compile Include="VueModele\Commercials.cs" />
+    <Compile Include="Modele\Devis.cs" />
+    <Compile Include="VueModele\ClientsViewModel.cs" />
+    <Compile Include="VueModele\CommercialsViewModel.cs" />
     <Compile Include="VueModele\ConnexionBDD.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -8,27 +8,27 @@ namespace Madera.Modele
 {
     public class Client
     {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string Prenom { get; set; }
-        public string Adresse { get; set; }
-        public string CodePostal { get; set; }
-        public string Ville { get; set; }
-        public string Email { get; set; }
-        public string Fax { get; set; }
-        public string Mobile { get; set; }
+        public int idClient { get; set; }
+        public string nomClient { get; set; }
+        public string prenomClient { get; set; }
+        public string adresseClient { get; set; }
+        public string codePostalClient { get; set; }
+        public string villeClient { get; set; }
+        public string emailClient { get; set; }
+        public string faxClient { get; set; }
+        public string mobileClient { get; set; }
         public Client(int id, string nom, string prenom, string adresse, 
             string codepostal, string ville, string email, string fax, string mobile)
         {
-            this.Id = id;
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Adresse = adresse;
-            this.CodePostal = codepostal;
-            this.Ville = ville;
-            this.Email = email;
-            this.Fax = fax;
-            this.Mobile = mobile;
+            this.idClient = id;
+            this.nomClient = nom;
+            this.prenomClient = prenom;
+            this.adresseClient = adresse;
+            this.codePostalClient = codepostal;
+            this.villeClient = ville;
+            this.emailClient = email;
+            this.faxClient = fax;
+            this.mobileClient = mobile;
         }
     }
 }

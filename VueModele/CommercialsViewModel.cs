@@ -17,7 +17,7 @@ namespace Madera.VueModele
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT NomCommercial from Commercials");
+                reader = connexion.execRead("SELECT nomCommercial from Commercials");
                 if (reader.Read())
                 {
                     while (reader.Read())
@@ -45,12 +45,12 @@ namespace Madera.VueModele
             try
             {
                 connexion.execWrite("INSERT INTO Commercials" +
-                    "(Nom, Prenom, Login, Password) " +
+                    "(nomCommercial, prenomCommercial, loginCommercial, motDePasseCommercial) " +
                     "VALUES ('"
-                    + commercial.Nom + "', '"
-                    + commercial.Prenom + "', '"
-                    + commercial.Login + "', '"
-                    + commercial.Password + "');");
+                    + commercial.nomCommercial + "', '"
+                    + commercial.prenomCommercial + "', '"
+                    + commercial.loginCommercial + "', '"
+                    + commercial.motDePasseCommercial + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -65,11 +65,11 @@ namespace Madera.VueModele
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Commercials Id = '" + commercial.Id + "'," +
-                    " Nom = '" + commercial.Nom + "'," +
-                    " Prenom = '" + commercial.Prenom + "', " +
-                    " Login = '" + commercial.Login + "', " +
-                    " Password = '" + commercial.Password + "' ;");
+                connexion.execWrite("UPDATE Commercials idCommercial = '" + commercial.idCommercial + "'," +
+                    " nomCommercial = '" + commercial.nomCommercial + "'," +
+                    " prenomCommercial = '" + commercial.prenomCommercial + "', " +
+                    " loginCommercial = '" + commercial.loginCommercial + "', " +
+                    " motDePasseCommercial = '" + commercial.motDePasseCommercial + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -84,8 +84,8 @@ namespace Madera.VueModele
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Commercial WHERE Id = "
-                    + commercial.Id + " ;");
+                connexion.execWrite("DELETE FROM Commercial WHERE idCommercial = "
+                    + commercial.idCommercial + " ;");
                 test = true;
             }
             catch (SqlException e)

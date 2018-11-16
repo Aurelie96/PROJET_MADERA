@@ -41,17 +41,17 @@ namespace Madera.VueModele
             try
             {
                 connexion.execWrite("INSERT INTO Client" +
-                    "(Nom, Prenom, Adresse, CodePostal, Ville," +
-                    "Email, Fax, Mobile) " +
+                    "(nomClient, prenomClient, adresseClient, codePostalClient" +
+                    ", villeClient, emailClient, faxClient, mobileClient) " +
                     "VALUES ('"
-                    + client.Nom + "', '"
-                    + client.Prenom + "', '"
-                    + client.Adresse + "', '"
-                    + client.CodePostal + "', '"
-                    + client.Ville + "', '"
-                    + client.Email + "', '"
-                    + client.Fax + "', '"
-                    + client.Mobile + "');");
+                    + client.nomClient + "', '"
+                    + client.prenomClient + "', '"
+                    + client.adresseClient + "', '"
+                    + client.codePostalClient + "', '"
+                    + client.villeClient + "', '"
+                    + client.emailClient + "', '"
+                    + client.faxClient + "', '"
+                    + client.mobileClient + "');");
                 test = true;
             }
             catch(SqlException e)
@@ -66,15 +66,15 @@ namespace Madera.VueModele
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Client Id = '" + client.Id + "'," +
-                    " Nom = '" + client.Nom + "'," +
-                    " Prenom = '" + client.Prenom + "', " +
-                    " Adresse = '" + client.Adresse + "', " +
-                    " CodePostal = '" + client.CodePostal + "', " +
-                    " Ville = '" + client.Ville + "', " +
-                    " Email = '" + client.Email + "', " +
-                    " Fax = '" + client.Fax + "', " +
-                    " Mobile = '" + client.Mobile + "' ;");
+                connexion.execWrite("UPDATE Client idClient = '" + client.idClient + "'," +
+                    " nomClient = '" + client.nomClient + "'," +
+                    " prenomClient = '" + client.prenomClient + "', " +
+                    " adresseClient = '" + client.adresseClient + "', " +
+                    " codePostalClient = '" + client.codePostalClient + "', " +
+                    " villeClient = '" + client.villeClient + "', " +
+                    " emailClient = '" + client.emailClient + "', " +
+                    " faxClient = '" + client.faxClient + "', " +
+                    " mobileClient = '" + client.mobileClient + "' ;");
                 test = true;
             }
             catch(SqlException e)
@@ -89,8 +89,8 @@ namespace Madera.VueModele
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Client WHERE Id = "
-                    + client.Id + " ;");
+                connexion.execWrite("DELETE FROM Client WHERE idClient = "
+                    + client.idClient + " ;");
                 test = true;
             }
             catch (SqlException e)

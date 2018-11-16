@@ -13,7 +13,7 @@ namespace Madera.VueModele
         private static ConnexionBDD connexion = new ConnexionBDD();
         public static List<Projet> ChargerProjet()
         {
-            List<Projet> lesProjet = new List<Projet>();
+            List<Projet> lesProjets = new List<Projet>();
             try
             {
                 SqlDataReader reader;
@@ -29,7 +29,7 @@ namespace Madera.VueModele
                             reader.GetInt32(3),
                             reader.GetInt32(4),
                             reader.GetInt32(5));
-                        lesProjet.Add(p);
+                        lesProjets.Add(p);
                     }
                 }
                 reader.Close();
@@ -38,7 +38,7 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesProjet;
+            return lesProjets;
         }
         public static Boolean CreerProjet(Projet projet)
         {

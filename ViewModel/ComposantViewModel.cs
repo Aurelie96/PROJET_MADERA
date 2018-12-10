@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,27 +9,25 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    class GammeViewModel
+    public class ComposantViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Gamme> ChargerGamme()
+        public static List<Composant> ChargerComposant()
         {
-            List<Gamme> lesGammes = new List<Gamme>();
+            List<Composant> lesComposants = new List<Composant>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT qualiteHuisserieGamme from Gamme");
+                reader = connexion.execRead("SELECT nomComposant from Composant");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Gamme g = new Gamme(
+                        Composant c = new Composant(
                             reader.GetInt32(0),
                             reader.GetString(1),
-                            reader.GetString(2),
-                            reader.GetString(3),
-                            reader.GetString(4));
-                        lesGammes.Add(g);
+                            reader.GetInt32(2));
+                        lesComposants.Add(c);
                     }
                 }
                 reader.Close();
@@ -37,20 +36,18 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesGammes;
+            return lesComposants;
         }
-        public static Boolean CreerGamme(Gamme gamme)
+        public static Boolean CreerComposant(Composant composant)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Gamme" +
-                    "(offrePromoGamme, qualiteHuisserieGamme, typeIsolantGamme, typeFinitionGamme) " +
+                connexion.execWrite("INSERT INTO Composant" +
+                    "(nomComposant, idFamille) " +
                     "VALUES ('"
-                    + gamme.offrePromoGamme + "', '"
-                    + gamme.qualiteHuisserieGamme + "', '"
-                    + gamme.typeIsolantGamme + "', '"
-                    + gamme.typeFinitionGamme + "');");
+                    + composant.nomComposant + "', '"
+                    + composant.idFamille + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -60,16 +57,14 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierGamme(Gamme gamme)
+        public static Boolean ModifierComposant(Composant composant)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Gamme idGamme = '" + gamme.idGamme + "'," +
-                    " offrePromoGamme = '" + gamme.offrePromoGamme + "'," +
-                    " qualiteHuisserieGamme = '" + gamme.qualiteHuisserieGamme + "'," +
-                    " typeIsolantGamme = '" + gamme.typeIsolantGamme + "'," +
-                    " typeFinitionGamme = '" + gamme.typeFinitionGamme + "' ;");
+                connexion.execWrite("UPDATE Composant idComposant = '" + composant.idComposant + "'," +
+                    " nomComposant = '" + composant.nomComposant + "', "
+                    + "idFamille = '" + composant.idFamille + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -79,13 +74,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerGamme(Gamme gamme)
+        public static Boolean SupprimerComposant(Composant composant)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Gamme WHERE idGamme = "
-                    + gamme.idGamme + " ;");
+                connexion.execWrite("DELETE FROM Composant WHERE idComposant = "
+                    + composant.idComposant + " ;");
                 test = true;
             }
             catch (SqlException e)

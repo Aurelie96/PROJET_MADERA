@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,24 +9,27 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    public class EtatsViewModel
+    class FormesViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Etat> ChargerEtat()
+        public static List<Forme> ChargerForme()
         {
-            List<Etat> lesEtats = new List<Etat>();
+            List<Forme> lesFormes = new List<Forme>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT libelleEtat from Etat");
+                reader = connexion.execRead("SELECT labelForme from Forme");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Etat e = new Etat(
+                        Forme f = new Forme(
                             reader.GetInt32(0),
-                            reader.GetString(1));
-                        lesEtats.Add(e);
+                            reader.GetString(1),
+                            reader.GetFloat(2),
+                            reader.GetFloat(3),
+                            reader.GetFloat(4));
+                        lesFormes.Add(f);
                     }
                 }
                 reader.Close();
@@ -34,17 +38,20 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesEtats;
+            return lesFormes;
         }
-        public static Boolean CreerEtat(Etat etat)
+        public static Boolean CreerForme(Forme forme)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Etat" +
-                    "(libelleEtat) " +
+                connexion.execWrite("INSERT INTO Forme" +
+                    "(labelForme, longeurForme, largeurForme, prixHT) " +
                     "VALUES ('"
-                    + etat.libelleEtat + "');");
+                    + forme.labelForme + "', '"
+                    + forme.longueurForme + "', '"
+                    + forme.largeurForme + "', '"
+                    + forme.prixHTForme + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -54,13 +61,16 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierEtat(Etat etat)
+        public static Boolean ModifierForme(Forme forme)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Etat idEtat = '" + etat.idEtat + "'," +
-                    " libelleEtat = '" + etat.libelleEtat + "' ;");
+                connexion.execWrite("UPDATE Forme idForme = '" + forme.idForme + "'," +
+                    " labelForme = '" + forme.labelForme + "'," +
+                    " longeurForme = '" + forme.longueurForme + "'," +
+                    " largeurForme = '" + forme.largeurForme + "'," +
+                    " prixHT = '" + forme.prixHTForme + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -70,13 +80,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerEtat(Etat etat)
+        public static Boolean SupprimerForme(Forme forme)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Etat WHERE idEtat = "
-                    + etat.idEtat + " ;");
+                connexion.execWrite("DELETE FROM Forme WHERE idForme = "
+                    + forme.idForme + " ;");
                 test = true;
             }
             catch (SqlException e)

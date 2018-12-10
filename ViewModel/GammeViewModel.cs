@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,25 +9,27 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    class SolViewModel
+    class GammeViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Sol> ChargerSol()
+        public static List<Gamme> ChargerGamme()
         {
-            List<Sol> lesSols = new List<Sol>();
+            List<Gamme> lesGammes = new List<Gamme>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT typeSol from Sol");
+                reader = connexion.execRead("SELECT qualiteHuisserieGamme from Gamme");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Sol s = new Sol(
+                        Gamme g = new Gamme(
                             reader.GetInt32(0),
                             reader.GetString(1),
-                            reader.GetFloat(2));
-                        lesSols.Add(s);
+                            reader.GetString(2),
+                            reader.GetString(3),
+                            reader.GetString(4));
+                        lesGammes.Add(g);
                     }
                 }
                 reader.Close();
@@ -35,18 +38,20 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesSols;
+            return lesGammes;
         }
-        public static Boolean CreerSol(Sol sol)
+        public static Boolean CreerGamme(Gamme gamme)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Sol" +
-                    "(typeSol, prixHTSol) " +
+                connexion.execWrite("INSERT INTO Gamme" +
+                    "(offrePromoGamme, qualiteHuisserieGamme, typeIsolantGamme, typeFinitionGamme) " +
                     "VALUES ('"
-                    + sol.typeSol + "', '"
-                    + sol.prixHTSol + "');");
+                    + gamme.offrePromoGamme + "', '"
+                    + gamme.qualiteHuisserieGamme + "', '"
+                    + gamme.typeIsolantGamme + "', '"
+                    + gamme.typeFinitionGamme + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -56,14 +61,16 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierSol(Sol sol)
+        public static Boolean ModifierGamme(Gamme gamme)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Sol idSol = '" + sol.idSol + "'," +
-                    " typeSol = '" + sol.typeSol + "'," +
-                    " prixHTSol = '" + sol.prixHTSol + "' ;");
+                connexion.execWrite("UPDATE Gamme idGamme = '" + gamme.idGamme + "'," +
+                    " offrePromoGamme = '" + gamme.offrePromoGamme + "'," +
+                    " qualiteHuisserieGamme = '" + gamme.qualiteHuisserieGamme + "'," +
+                    " typeIsolantGamme = '" + gamme.typeIsolantGamme + "'," +
+                    " typeFinitionGamme = '" + gamme.typeFinitionGamme + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -73,13 +80,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerSol(Sol sol)
+        public static Boolean SupprimerGamme(Gamme gamme)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Sol WHERE idSol = "
-                    + sol.idSol + " ;");
+                connexion.execWrite("DELETE FROM Gamme WHERE idGamme = "
+                    + gamme.idGamme + " ;");
                 test = true;
             }
             catch (SqlException e)

@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,25 +9,24 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    public class ComposantViewModel
+    public class FamilleViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Composant> ChargerComposant()
+        public static List<Famille> ChargerFamille()
         {
-            List<Composant> lesComposants = new List<Composant>();
+            List<Famille> lesFamilles = new List<Famille>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT nomComposant from Composant");
+                reader = connexion.execRead("SELECT nomFamille from Famille");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Composant c = new Composant(
+                        Famille f = new Famille(
                             reader.GetInt32(0),
-                            reader.GetString(1),
-                            reader.GetInt32(2));
-                        lesComposants.Add(c);
+                            reader.GetString(1));
+                        lesFamilles.Add(f);
                     }
                 }
                 reader.Close();
@@ -35,18 +35,17 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesComposants;
+            return lesFamilles;
         }
-        public static Boolean CreerComposant(Composant composant)
+        public static Boolean CreerFamille(Famille famille)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Composant" +
-                    "(nomComposant, idFamille) " +
+                connexion.execWrite("INSERT INTO Famille" +
+                    "(nomFamille) " +
                     "VALUES ('"
-                    + composant.nomComposant + "', '"
-                    + composant.idFamille + "');");
+                    + famille.nomFamille + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -56,14 +55,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierComposant(Composant composant)
+        public static Boolean ModifierFamille(Famille famille)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Composant idComposant = '" + composant.idComposant + "'," +
-                    " nomComposant = '" + composant.nomComposant + "', "
-                    + "idFamille = '" + composant.idFamille + "' ;");
+                connexion.execWrite("UPDATE Famille idFamille = '" + famille.idFamille + "'," +
+                    " nomFamille = '" + famille.nomFamille + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -73,13 +71,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerComposant(Composant composant)
+        public static Boolean SupprimerFamille(Famille famille)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Composant WHERE idComposant = "
-                    + composant.idComposant + " ;");
+                connexion.execWrite("DELETE FROM Famille WHERE idFamille = "
+                    + famille.idFamille + " ;");
                 test = true;
             }
             catch (SqlException e)

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Madera.VueModele
+namespace Madera.Data
 {
-    class ConnexionBDD
+    public class ConnexionBDD
     {
-        public static string dataSource = " ";
-        public static string catalog = "";
-        public static string user = " ";
-        public static string password = " ";
+        public static string dataSource = "localhost";
+        public static string catalog = "madera";
+        public static string user = "root";
+        public static string password = "root";
 
         private SqlConnection sqlConnection;
         private void connection()

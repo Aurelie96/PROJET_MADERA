@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,27 +9,25 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    class FormesViewModel
+    class SolViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Forme> ChargerForme()
+        public static List<Sol> ChargerSol()
         {
-            List<Forme> lesFormes = new List<Forme>();
+            List<Sol> lesSols = new List<Sol>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT labelForme from Forme");
+                reader = connexion.execRead("SELECT typeSol from Sol");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Forme f = new Forme(
+                        Sol s = new Sol(
                             reader.GetInt32(0),
                             reader.GetString(1),
-                            reader.GetFloat(2),
-                            reader.GetFloat(3),
-                            reader.GetFloat(4));
-                        lesFormes.Add(f);
+                            reader.GetFloat(2));
+                        lesSols.Add(s);
                     }
                 }
                 reader.Close();
@@ -37,20 +36,18 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesFormes;
+            return lesSols;
         }
-        public static Boolean CreerForme(Forme forme)
+        public static Boolean CreerSol(Sol sol)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Forme" +
-                    "(labelForme, longeurForme, largeurForme, prixHT) " +
+                connexion.execWrite("INSERT INTO Sol" +
+                    "(typeSol, prixHTSol) " +
                     "VALUES ('"
-                    + forme.labelForme + "', '"
-                    + forme.longueurForme + "', '"
-                    + forme.largeurForme + "', '"
-                    + forme.prixHTForme + "');");
+                    + sol.typeSol + "', '"
+                    + sol.prixHTSol + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -60,16 +57,14 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierForme(Forme forme)
+        public static Boolean ModifierSol(Sol sol)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Forme idForme = '" + forme.idForme + "'," +
-                    " labelForme = '" + forme.labelForme + "'," +
-                    " longeurForme = '" + forme.longueurForme + "'," +
-                    " largeurForme = '" + forme.largeurForme + "'," +
-                    " prixHT = '" + forme.prixHTForme + "' ;");
+                connexion.execWrite("UPDATE Sol idSol = '" + sol.idSol + "'," +
+                    " typeSol = '" + sol.typeSol + "'," +
+                    " prixHTSol = '" + sol.prixHTSol + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -79,13 +74,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerForme(Forme forme)
+        public static Boolean SupprimerSol(Sol sol)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Forme WHERE idForme = "
-                    + forme.idForme + " ;");
+                connexion.execWrite("DELETE FROM Sol WHERE idSol = "
+                    + sol.idSol + " ;");
                 test = true;
             }
             catch (SqlException e)

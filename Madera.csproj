@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\ConnexionBDD.cs" />
     <Compile Include="Modele\Composant.cs" />
     <Compile Include="Modele\Couverture.cs" />
     <Compile Include="Modele\Etat.cs" />
@@ -66,20 +67,20 @@
     <Compile Include="Modele\Projet.cs" />
     <Compile Include="Modele\Section.cs" />
     <Compile Include="Modele\Sol.cs" />
-    <Compile Include="VueModele\ComposantViewModel.cs" />
-    <Compile Include="VueModele\CouverturesViewModel.cs" />
-    <Compile Include="VueModele\DevisViewModel.cs" />
-    <Compile Include="VueModele\EtatsViewModel.cs" />
-    <Compile Include="VueModele\FamilleViewModel.cs" />
-    <Compile Include="VueModele\FormesViewModel.cs" />
-    <Compile Include="VueModele\GammeViewModel.cs" />
-    <Compile Include="VueModele\ModuleViewModel.cs" />
-    <Compile Include="VueModele\ObjectifModuleViewModel.cs" />
-    <Compile Include="VueModele\PlanViewModel.cs" />
-    <Compile Include="VueModele\ProjetViewModel.cs" />
-    <Compile Include="VueModele\SectionViewModel.cs" />
-    <Compile Include="VueModele\SolViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="ViewModel\ComposantViewModel.cs" />
+    <Compile Include="ViewModel\CouverturesViewModel.cs" />
+    <Compile Include="ViewModel\DevisViewModel.cs" />
+    <Compile Include="ViewModel\EtatsViewModel.cs" />
+    <Compile Include="ViewModel\FamilleViewModel.cs" />
+    <Compile Include="ViewModel\FormesViewModel.cs" />
+    <Compile Include="ViewModel\GammeViewModel.cs" />
+    <Compile Include="ViewModel\ModuleViewModel.cs" />
+    <Compile Include="ViewModel\ObjectifModuleViewModel.cs" />
+    <Compile Include="ViewModel\PlanViewModel.cs" />
+    <Compile Include="ViewModel\ProjetViewModel.cs" />
+    <Compile Include="ViewModel\SectionViewModel.cs" />
+    <Compile Include="ViewModel\SolViewModel.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -88,10 +89,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modele\Devis.cs" />
-    <Compile Include="VueModele\ClientsViewModel.cs" />
-    <Compile Include="VueModele\CommercialsViewModel.cs" />
-    <Compile Include="VueModele\ConnexionBDD.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="ViewModel\ClientsViewModel.cs" />
+    <Compile Include="ViewModel\CommercialsViewModel.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

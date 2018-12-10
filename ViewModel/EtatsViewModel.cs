@@ -1,4 +1,5 @@
-﻿using Madera.Modele;
+﻿using Madera.Data;
+using Madera.Modele;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,25 +9,24 @@ using System.Threading.Tasks;
 
 namespace Madera.VueModele
 {
-    public class CouverturesViewModel
+    public class EtatsViewModel
     {
         private static ConnexionBDD connexion = new ConnexionBDD();
-        public static List<Couverture> ChargerCouverture()
+        public static List<Etat> ChargerEtat()
         {
-            List<Couverture> lesCouvertures = new List<Couverture>();
+            List<Etat> lesEtats = new List<Etat>();
             try
             {
                 SqlDataReader reader;
-                reader = connexion.execRead("SELECT typeCouverture from Couverture");
+                reader = connexion.execRead("SELECT libelleEtat from Etat");
                 if (reader.Read())
                 {
                     while (reader.Read())
                     {
-                        Couverture c = new Couverture(
-                            reader.GetInt32(0), 
-                            reader.GetString(1), 
-                            reader.GetFloat(2));
-                        lesCouvertures.Add(c);
+                        Etat e = new Etat(
+                            reader.GetInt32(0),
+                            reader.GetString(1));
+                        lesEtats.Add(e);
                     }
                 }
                 reader.Close();
@@ -35,18 +35,17 @@ namespace Madera.VueModele
             {
                 Console.WriteLine(e);
             }
-            return lesCouvertures;
+            return lesEtats;
         }
-        public static Boolean CreerCouverture(Couverture couverture)
+        public static Boolean CreerEtat(Etat etat)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Couverture" +
-                    "(typeCouverture, prixHTCouverture) " +
+                connexion.execWrite("INSERT INTO Etat" +
+                    "(libelleEtat) " +
                     "VALUES ('"
-                    + couverture.typeCouverture + "', '"
-                    + couverture.prixHTCouverture + "');");
+                    + etat.libelleEtat + "');");
                 test = true;
             }
             catch (SqlException e)
@@ -56,14 +55,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean ModifierCouverture(Couverture couverture)
+        public static Boolean ModifierEtat(Etat etat)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Couverture idCouverture = '" + couverture.idCouverture + "'," +
-                    " typeCouverture = '" + couverture.typeCouverture + "'," +
-                    " prixHTCouverture = '" + couverture.prixHTCouverture + "' ;");
+                connexion.execWrite("UPDATE Etat idEtat = '" + etat.idEtat + "'," +
+                    " libelleEtat = '" + etat.libelleEtat + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -73,13 +71,13 @@ namespace Madera.VueModele
             }
             return test;
         }
-        public static Boolean SupprimerCouverture(Couverture couverture)
+        public static Boolean SupprimerEtat(Etat etat)
         {
             bool test = false;
             try
             {
-                connexion.execWrite("DELETE FROM Couverture WHERE idCouverture = "
-                    + couverture.idCouverture + " ;");
+                connexion.execWrite("DELETE FROM Etat WHERE idEtat = "
+                    + etat.idEtat + " ;");
                 test = true;
             }
             catch (SqlException e)

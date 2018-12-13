@@ -1,0 +1,13 @@
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\bin\Debug\UIWindows.exe
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\bin\Debug\UIWindows.pdb
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\bin\Debug\UIPresenter.dll
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\bin\Debug\UIPresenter.pdb
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.csprojResolveAssemblyReference.cache
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.CodeRequestForm.resources
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.DisplayInfoForm.resources
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.MainForm.resources
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.Properties.Resources.resources
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.csproj.GenerateResource.Cache
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.csproj.CoreCompileInputs.cache
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.exe
+C:\Users\asus\Downloads\MVP\MVP1\UIWindows\obj\Debug\UIWindows.pdb

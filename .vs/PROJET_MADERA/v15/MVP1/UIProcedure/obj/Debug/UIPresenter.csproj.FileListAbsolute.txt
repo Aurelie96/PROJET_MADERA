@@ -1,0 +1,6 @@
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\bin\Debug\UIPresenter.dll
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\bin\Debug\UIPresenter.pdb
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\obj\Debug\UIPresenter.csprojResolveAssemblyReference.cache
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\obj\Debug\UIPresenter.csproj.CoreCompileInputs.cache
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\obj\Debug\UIPresenter.dll
+C:\Users\asus\Downloads\MVP\MVP1\UIProcedure\obj\Debug\UIPresenter.pdb

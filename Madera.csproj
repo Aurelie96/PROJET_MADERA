@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E4D4E2E-EAB5-4B67-9439-953D0362F972}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Madera</RootNamespace>
+    <AssemblyName>Madera</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\ProjetMadera\mysql-connector-net-6.8.7-noinstall\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controleur\ClientsDAO.cs" />
+    <Compile Include="Controleur\CommercialsDAO.cs" />
+    <Compile Include="Controleur\ComposantsDAO.cs" />
+    <Compile Include="Controleur\CouverturesDAO.cs" />
+    <Compile Include="Controleur\DevisDAO.cs" />
+    <Compile Include="Controleur\EtatsDAO.cs" />
+    <Compile Include="Controleur\FamillesDAO.cs" />
+    <Compile Include="Controleur\FormesDAO.cs" />
+    <Compile Include="Controleur\GammesDAO.cs" />
+    <Compile Include="Controleur\ModulesDAO.cs" />
+    <Compile Include="Controleur\ObjectifsModulesDAO.cs" />
+    <Compile Include="Controleur\PlansDAO.cs" />
+    <Compile Include="Controleur\ProjetsDAO.cs" />
+    <Compile Include="Controleur\SectionsDAO.cs" />
+    <Compile Include="Controleur\SolsDAO.cs" />
+    <Compile Include="Data\ConnexionBDD.cs" />
+    <Compile Include="View\AjouterClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AjouterClientView.Designer.cs">
+      <DependentUpon>AjouterClientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClientView.Designer.cs">
+      <DependentUpon>ClientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Commercial.cs" />
+    <Compile Include="Model\Composant.cs" />
+    <Compile Include="Model\Couverture.cs" />
+    <Compile Include="Model\Devis.cs" />
+    <Compile Include="Model\Etat.cs" />
+    <Compile Include="Model\Famille.cs" />
+    <Compile Include="Model\Forme.cs" />
+    <Compile Include="Model\Gamme.cs" />
+    <Compile Include="Model\Module.cs" />
+    <Compile Include="Model\ObjectifModule.cs" />
+    <Compile Include="Model\Plan.cs" />
+    <Compile Include="Model\Projet.cs" />
+    <Compile Include="Model\Section.cs" />
+    <Compile Include="Model\Sol.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ModificationClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ModificationClientView.Designer.cs">
+      <DependentUpon>ModificationClientView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\AjouterClientView.resx">
+      <DependentUpon>AjouterClientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClientView.resx">
+      <DependentUpon>ClientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ModificationClientView.resx">
+      <DependentUpon>ModificationClientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

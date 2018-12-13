@@ -1,0 +1,13 @@
+D:\Projet\Madera\Madera\obj\Debug\Madera.csprojAssemblyReference.cache
+D:\Projet\Madera\Madera\obj\Debug\Madera.Properties.Resources.resources
+D:\Projet\Madera\Madera\obj\Debug\Madera.csproj.GenerateResource.cache
+D:\Projet\Madera\Madera\obj\Debug\Madera.csproj.CoreCompileInputs.cache
+D:\Projet\Madera\Madera\bin\Debug\Madera.exe.config
+D:\Projet\Madera\Madera\bin\Debug\Madera.exe
+D:\Projet\Madera\Madera\bin\Debug\Madera.pdb
+D:\Projet\Madera\Madera\obj\Debug\Madera.exe
+D:\Projet\Madera\Madera\obj\Debug\Madera.pdb
+D:\Projet\Madera\Madera\obj\Debug\Madera.ClientView.resources
+D:\Projet\Madera\Madera\obj\Debug\Madera.csproj.CopyComplete
+D:\Projet\Madera\Madera\obj\Debug\Madera.View.ModificationClientView.resources
+D:\Projet\Madera\Madera\obj\Debug\Madera.View.AjouterClientView.resources

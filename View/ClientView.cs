@@ -16,7 +16,7 @@ namespace Madera
 {
     public partial class ClientView : Form
     {
-        public ClientView()
+        public ClientView(string infos)
         {
             InitializeComponent();
             List<Client> LesClients = ClientsDAO.ChargerClient();
@@ -33,6 +33,7 @@ namespace Madera
                     LesClients[i].GetfaxClient(),
                     LesClients[i].GetmobileClient());
             }
+            lblBienvenue.Text += infos;
         }
         private void btnRafraichir_Click(object sender, EventArgs e)
         {

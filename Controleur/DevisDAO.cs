@@ -57,7 +57,7 @@ namespace Madera.Controleur
                     "idEtat) " +
                     "VALUES ('"
                     + devis.nomDevis + "', '"
-                    + devis.dateDevis + "', '"ikj
+                    + devis.dateDevis + "', '"
                     + devis.quantiteDevis + "', '"
                     + devis.uniteDevis + "', '"
                     + devis.prixHTDevis + "', '"

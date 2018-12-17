@@ -19,7 +19,7 @@ namespace Madera.Controleur
             try
             {
                 MySqlDataReader reader;
-                reader = connexion.execRead("SELECT nomCommercial from Commercials");
+                reader = connexion.execRead("SELECT nomCommercial from Commercial");
                 while (reader.Read())
                 {
                     Commercial c = new Commercial(
@@ -38,12 +38,44 @@ namespace Madera.Controleur
             }
             return lesCommercials;
         }
+
+        public static Boolean ExisteCommercial(string login, string pwd)
+        {
+            Boolean exist = false;
+            try
+            {
+                MySqlDataReader mySqlDataReader;
+                mySqlDataReader = connexion.execRead("SELECT nomCommercial, prenomCommercial from Commercial WHERE loginCommercial = '" + login + "' AND motDePasseCommercial = '" + pwd + "'");
+                exist = mySqlDataReader.HasRows;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return exist;
+        }
+
+        public static string GetInfosCommercial(string login, string pwd)
+        {
+            string infos = String.Empty;
+            if (ExisteCommercial(login, pwd))
+            {
+                MySqlDataReader dataReader;
+                dataReader = connexion.execRead("SELECT nomCommercial, prenomCommercial from Commercial WHERE loginCommercial='" + login + "' AND motDePasseCommercial='" + pwd + "'");
+                while(dataReader.Read())
+                {
+                    infos = dataReader.GetString(0).ToUpper() + " " + dataReader.GetString(1);
+                }
+            }
+            return infos;
+        }
+
         public static Boolean CreerCommercial(Commercial commercial)
         {
             Boolean test = false;
             try
             {
-                connexion.execWrite("INSERT INTO Commercials" +
+                connexion.execWrite("INSERT INTO Commercial" +
                     "(nomCommercial, prenomCommercial, loginCommercial, motDePasseCommercial) " +
                     "VALUES ('"
                     + commercial.nomCommercial + "', '"
@@ -64,7 +96,7 @@ namespace Madera.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Commercials SET " +
+                connexion.execWrite("UPDATE Commercial SET " +
                     " nomCommercial = '" + commercial.nomCommercial + "'," +
                     " prenomCommercial = '" + commercial.prenomCommercial + "', " +
                     " loginCommercial = '" + commercial.loginCommercial + "', " +

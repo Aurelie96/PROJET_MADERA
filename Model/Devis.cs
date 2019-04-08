@@ -18,7 +18,10 @@ namespace Madera.Model
         public int margeCommercialDevis { get; set; }
         public int margeEntrepriseDevis { get; set; }
         public int idEtat { get; set; }
-
+        public Devis(int id)
+        {
+            this.idDevis = id;
+        }
         public Devis(int id, string nom, DateTime date, int quantite, int unite, float prixHT,
             float prixTT, int margeCommercial, int margeEntreprise, int id_Etat)
         {

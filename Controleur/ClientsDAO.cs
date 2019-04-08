@@ -186,5 +186,24 @@ namespace Madera.Controleur
             }
             return LesClients;
         }
+        public static int IdClient(String Nom)
+        {
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("Select idClient FROM Client WHERE" +
+                    $" nomClient = '{Nom}';");
+                reader.Read();
+                Client LeClient = new Client(reader.GetInt32(0));
+                reader.Close();
+                return LeClient.idClient;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                Client ClientError = new Client(0);
+                return ClientError.idClient;
+            }
+        }
     }
 }

@@ -21,5 +21,9 @@ namespace Madera.Model
             this.loginCommercial = login;
             this.motDePasseCommercial = password;
         }
+        public Commercial(int id)
+        {
+            this.idCommercial = id;
+        }
     }
 }

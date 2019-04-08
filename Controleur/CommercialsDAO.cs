@@ -19,7 +19,11 @@ namespace Madera.Controleur
             try
             {
                 MySqlDataReader reader;
-                reader = connexion.execRead("SELECT nomCommercial from Commercial");
+                reader = connexion.execRead("SELECT idCommercial," +
+                    "nomCommercial," +
+                    "prenomCommercial," +
+                    "loginCommercial," +
+                    "motDePasseCommercial from Commercial");
                 while (reader.Read())
                 {
                     Commercial c = new Commercial(
@@ -126,6 +130,25 @@ namespace Madera.Controleur
                 test = false;
             }
             return test;
+        }
+        public static int IdCommercial(String Nom)
+        {
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT idCommercial FROM Commercial " +
+                    $"WHERE nomCommercial = '{Nom}'");
+                reader.Read();
+                Commercial LeCommercial = new Commercial(reader.GetInt32(0));
+                reader.Close();
+                return LeCommercial.idCommercial;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                Commercial CommercialError = new Commercial(0);
+                return CommercialError.idCommercial;
+            }
         }
     }
 }

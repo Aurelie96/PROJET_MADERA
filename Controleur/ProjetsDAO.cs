@@ -19,20 +19,20 @@ namespace Madera.Controleur
             try
             {
                 MySqlDataReader reader;
-                reader = connexion.execRead("SELECT nomProjet from Projet");
-                if (reader.Read())
+                reader = connexion.execRead("SELECT p.idProjet, p.nomProjet, p.dateProjet, cl.nomClient, " +
+                    "co.nomCommercial, d.nomDevis FROM projet p, client cl, commercial co, " +
+                    "devis d WHERE p.idClient = cl.idClient AND p.idCommercial = co.idCommercial " +
+                    "AND p.idDevis = d.idDevis;");
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        Projet p = new Projet(
-                            reader.GetInt32(0),
-                            reader.GetString(1),
-                            reader.GetDateTime(2),
-                            reader.GetInt32(3),
-                            reader.GetInt32(4),
-                            reader.GetInt32(5));
-                        lesProjets.Add(p);
-                    }
+                    Projet p = new Projet(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        reader.GetDateTime(2),
+                        reader.GetString(3),
+                        reader.GetString(4),
+                        reader.GetString(5));
+                    lesProjets.Add(p);
                 }
                 reader.Close();
             }
@@ -52,7 +52,7 @@ namespace Madera.Controleur
                     "idDevis) " +
                     "VALUES ('"
                     + projet.nomProjet + "', '"
-                    + projet.dateProjet + "', '"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
                     + projet.idClient + "', '"
                     + projet.idCommercial + "', '"
                     + projet.idDevis + "');");
@@ -70,12 +70,12 @@ namespace Madera.Controleur
             Boolean test = false;
             try
             {
-                connexion.execWrite("UPDATE Projet idProjet = '" + projet.idProjet + "'," +
+                connexion.execWrite("UPDATE Projet SET " +
                     " nomProjet = '" + projet.nomProjet + "'," +
-                    " dateProjet = '" + projet.dateProjet + "'," +
                     " idClient = '" + projet.idClient + "', " +
                     " idCommercial = '" + projet.idCommercial + "', " +
-                    " idDevis = '" + projet.idDevis + "' ;");
+                    " idDevis = '" + projet.idDevis + "' " +
+                    " WHERE idProjet = '" + projet.idProjet + "' ;");
                 test = true;
             }
             catch (SqlException e)
@@ -100,6 +100,78 @@ namespace Madera.Controleur
                 test = false;
             }
             return test;
+        }
+        public static Projet RemplirInfoProjet(String Nom)
+        {
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    " p.idProjet, " +
+                    " p.nomProjet, " +
+                    " p.dateProjet, " +
+                    " cl.nomClient, " +
+                    " co.nomCommercial, " +
+                    " d.nomDevis " +
+                    "FROM projet p, client cl, commercial co, devis d " +
+                    "WHERE p.idClient = cl.idClient " +
+                    "AND p.idCommercial = co.idCommercial " +
+                    "AND p.idDevis = d.idDevis " +
+                    $"AND p.nomProjet = '{Nom}'");
+                reader.Read();
+                Projet LeProjet = new Projet(
+                reader.GetInt32(0),
+                reader.GetString(1),
+                reader.GetDateTime(2),
+                reader.GetString(3),
+                reader.GetString(4),
+                reader.GetString(5));
+                reader.Close();
+                return LeProjet;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                Projet ProjetError = new Projet(0);
+                return ProjetError;
+            }
+        }
+        public static List<Projet> RechercherProjet(String nom)
+        {
+            List<Projet> LesProjets = new List<Projet>();
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT " +
+                    " p.idProjet, " +
+                    " p.nomProjet, " +
+                    " p.dateProjet, " +
+                    " cl.nomClient, " +
+                    " co.nomCommercial, " +
+                    " d.nomDevis " +
+                    "FROM projet p, client cl, commercial co, devis d " +
+                    "WHERE p.idClient = cl.idClient " +
+                    "AND p.idCommercial = co.idCommercial " +
+                    "AND p.idDevis = d.idDevis " +
+                    $"AND p.nomProjet LIKE '%{nom}%'");
+                while (reader.Read())
+                {
+                    Projet LeProjet = new Projet(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetDateTime(2),
+                    reader.GetString(3),
+                    reader.GetString(4),
+                    reader.GetString(5));
+                    LesProjets.Add(LeProjet);
+                }
+                reader.Close();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            return LesProjets;
         }
     }
 }

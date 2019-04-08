@@ -88,6 +88,12 @@
     <Compile Include="View\AjouterClientView.Designer.cs">
       <DependentUpon>AjouterClientView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AjouterProjetView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AjouterProjetView.Designer.cs">
+      <DependentUpon>AjouterProjetView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AjouterClientView.resx">
       <DependentUpon>AjouterClientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AjouterProjetView.resx">
+      <DependentUpon>AjouterProjetView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ClientView.resx">
       <DependentUpon>ClientView.cs</DependentUpon>

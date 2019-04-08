@@ -114,5 +114,24 @@ namespace Madera.Controleur
             }
             return test;
         }
+        public static int IdDevis(String Nom)
+        {
+            try
+            {
+                MySqlDataReader reader;
+                reader = connexion.execRead("SELECT idDevis FROM Devis " +
+                    $"WHERE nomDevis = '{Nom}'");
+                reader.Read();
+                Devis LeDevis = new Devis(reader.GetInt32(0));
+                reader.Close();
+                return LeDevis.idDevis;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                Devis DevisError = new Devis(0);
+                return DevisError.idDevis;
+            }
+        }
     }
 }

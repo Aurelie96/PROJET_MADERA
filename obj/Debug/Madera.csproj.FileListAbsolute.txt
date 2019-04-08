@@ -42,7 +42,6 @@ C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csproj.CopyComplete
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.exe
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.pdb
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csprojAssemblyReference.cache
-<<<<<<< HEAD
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.exe.config
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.exe
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.pdb
@@ -51,16 +50,12 @@ D:\Autre\PROJET_MADERA\bin\Debug\MySql.Data.xml
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.csprojAssemblyReference.cache
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.Properties.Resources.resources
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.View.Accueil.resources
-=======
-D:\Autre\PROJET_MADERA\obj\Debug\Madera.csprojAssemblyReference.cache
->>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.View.AjouterClientView.resources
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.ClientView.resources
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.View.FrmConnexion.resources
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.View.ModificationClientView.resources
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.csproj.GenerateResource.cache
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.csproj.CopyComplete
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.exe
 D:\Autre\PROJET_MADERA\obj\Debug\Madera.pdb
@@ -86,7 +81,3 @@ D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.csproj.CopyComplete
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.exe
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.pdb
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.View.AjouterProjetView.resources
-=======
-D:\Autre\PROJET_MADERA\obj\Debug\Madera.exe
-D:\Autre\PROJET_MADERA\obj\Debug\Madera.pdb
->>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278

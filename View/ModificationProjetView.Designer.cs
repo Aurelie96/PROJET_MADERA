@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.TxtReferenceProjet = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtNomDevis = new System.Windows.Forms.TextBox();
@@ -226,14 +225,5 @@
         private System.Windows.Forms.ComboBox cbxNomCommercial;
         private System.Windows.Forms.ComboBox cbxNomClient;
         private System.Windows.Forms.Button btnClose;
-=======
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ModificationProjetView";
-        }
-
-        #endregion
->>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
     }
 }

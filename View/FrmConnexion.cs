@@ -27,8 +27,8 @@ namespace Madera.View
         {
             if (CommercialsDAO.ExisteCommercial(tbxIdentifiant.Text, tbxMdp.Text))
             {
-                ClientView cv = new ClientView(CommercialsDAO.GetInfosCommercial(tbxIdentifiant.Text, tbxMdp.Text));
-                cv.FormClosed += new FormClosedEventHandler(ClientView_FormClosed);
+                Accueil cv = new Accueil(CommercialsDAO.GetInfosCommercial(tbxIdentifiant.Text, tbxMdp.Text));
+                cv.FormClosed += new FormClosedEventHandler(Accueil_FormClosed);
                 if(chkRememberMe.Checked)
                 {
                     Properties.Settings.Default.username = tbxIdentifiant.Text;
@@ -85,7 +85,7 @@ namespace Madera.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ClientView_FormClosed(object sender, FormClosedEventArgs e) => this.Show();
+        void Accueil_FormClosed(object sender, FormClosedEventArgs e) => this.Show();
 
         private void FrmConnexion_Load(object sender, EventArgs e)
         {

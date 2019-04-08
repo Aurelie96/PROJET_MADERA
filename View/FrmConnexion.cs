@@ -77,6 +77,10 @@ namespace Madera.View
                 Properties.Settings.Default.pwd = tbxMdp.Text;
                 Properties.Settings.Default.Save();
             }
+            else
+            {
+                Properties.Settings.Default.Reset();
+            }
             this.Close();
         }
 

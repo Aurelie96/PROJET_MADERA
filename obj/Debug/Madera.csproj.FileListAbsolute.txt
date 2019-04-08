@@ -42,3 +42,4 @@ C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csproj.CopyComplete
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.exe
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.pdb
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csprojAssemblyReference.cache
+C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.Properties.Resources.resources

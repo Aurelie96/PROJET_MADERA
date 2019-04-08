@@ -65,6 +65,11 @@
     <Compile Include="Controleur\SectionsDAO.cs" />
     <Compile Include="Controleur\SolsDAO.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -112,6 +117,10 @@
     <Compile Include="View\ModificationClientView.Designer.cs">
       <DependentUpon>ModificationClientView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AjouterClientView.resx">
       <DependentUpon>AjouterClientView.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,5 +144,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

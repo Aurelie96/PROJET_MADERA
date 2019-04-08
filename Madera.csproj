@@ -65,6 +65,12 @@
     <Compile Include="Controleur\SectionsDAO.cs" />
     <Compile Include="Controleur\SolsDAO.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="View\AjouterClientView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

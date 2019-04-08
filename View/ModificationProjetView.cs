@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using Madera.Controleur;
 using Madera.Model;
 using System;
+=======
+﻿using System;
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +18,7 @@ namespace Madera.View
 {
     public partial class ModificationProjetView : Form
     {
+<<<<<<< HEAD
         public ModificationProjetView(object NomProjetClick)
         {
             InitializeComponent();
@@ -66,6 +71,11 @@ namespace Madera.View
                 commercial,
                 devis);
             ProjetsDAO.ModifierProjet(LeProjet);
+=======
+        public ModificationProjetView()
+        {
+            InitializeComponent();
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
         }
     }
 }

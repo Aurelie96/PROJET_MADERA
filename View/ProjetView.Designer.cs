@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.dgv_VueProjet = new System.Windows.Forms.DataGridView();
             this.dgvNomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrenomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,5 +186,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAdresseClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCodePostalClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvVilleClient;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ProjetView";
+        }
+
+        #endregion
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
     }
 }

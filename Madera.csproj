@@ -65,23 +65,29 @@
     <Compile Include="Controleur\SectionsDAO.cs" />
     <Compile Include="Controleur\SolsDAO.cs" />
     <Compile Include="Data\ConnexionBDD.cs" />
+<<<<<<< HEAD
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+=======
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+<<<<<<< HEAD
     <Compile Include="View\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
     <Compile Include="View\AjouterClientView.cs">
       <SubType>Form</SubType>
     </Compile>

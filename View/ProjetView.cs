@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using Madera.Controleur;
 using Madera.Model;
 using System;
+=======
+﻿using System;
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +21,7 @@ namespace Madera.View
         public ProjetView()
         {
             InitializeComponent();
+<<<<<<< HEAD
             List<Projet> LeProjet = ProjetsDAO.ChargerProjet();
             for (int i = 0; i < LeProjet.Count(); i++)
             {
@@ -81,6 +86,8 @@ namespace Madera.View
             ModificationProjetView ModifProjet = new ModificationProjetView(NomProjetClick);
             ModifProjet.Hide();
             ModifProjet.Show();
+=======
+>>>>>>> 998b72d722f998624b54343b4dbe0ab2b7585278
         }
     }
 }

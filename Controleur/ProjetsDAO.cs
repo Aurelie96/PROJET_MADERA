@@ -51,12 +51,11 @@ namespace Madera.Controleur
                     "(nomDevis, dateDevis, quantiteDevis, uniteDevis, " +
                     "prixHTDevis, prixTTDevis, margeCommercialDevis, margeEntrepriseDevis," +
                     "idEtat) " +
-                    "VALUES ('"
-                    + projet.nomProjet + "', '"
-                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
-                    + projet.idClient + "', '"
-                    + projet.idCommercial + "', '"
-                    + projet.idDevis + "');");
+                    "VALUES ('" +
+                    "Devis_"+ projet.nomProjet + "_"+ projet.nomClient +"', '"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," +
+                    " NULL, NULL, NULL, NULL, NULL, NULL, '1');");
+                int devis = DevisDAO.IdDevis("Devis_" + projet.nomProjet + "_" + projet.nomClient);
                 connexion.execWrite("INSERT INTO Projet" +
                     "(nomProjet, dateProjet, idClient, idCommercial, " +
                     "idDevis) " +
@@ -65,7 +64,7 @@ namespace Madera.Controleur
                     + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
                     + projet.idClient + "', '"
                     + projet.idCommercial + "', '"
-                    + projet.idDevis + "');");
+                    + devis + "');");
                 test = true;
             }
             catch (SqlException e)

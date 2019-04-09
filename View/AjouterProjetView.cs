@@ -37,7 +37,7 @@ namespace Madera.View
             int commercial = CommercialsDAO.IdCommercial(cbxNomCommercial.SelectedItem.ToString());
             Projet LeProjet = new Projet(
                 TxtNomProjet.Text,
-                DateTime.Parse(TxtDateProjet.Text),
+                cbxNomClient.SelectedItem.ToString(),
                 client,
                 commercial);
             ProjetsDAO.CreerProjet(LeProjet);

@@ -33,8 +33,6 @@
             this.cbxNomCommercial = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtDateProjet = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.TxtNomProjet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAjouter = new System.Windows.Forms.Button();
@@ -89,25 +87,9 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Nom Client :";
             // 
-            // TxtDateProjet
-            // 
-            this.TxtDateProjet.Location = new System.Drawing.Point(315, 169);
-            this.TxtDateProjet.Name = "TxtDateProjet";
-            this.TxtDateProjet.Size = new System.Drawing.Size(150, 22);
-            this.TxtDateProjet.TabIndex = 48;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Date Projet :";
-            // 
             // TxtNomProjet
             // 
-            this.TxtNomProjet.Location = new System.Drawing.Point(315, 119);
+            this.TxtNomProjet.Location = new System.Drawing.Point(315, 174);
             this.TxtNomProjet.Name = "TxtNomProjet";
             this.TxtNomProjet.Size = new System.Drawing.Size(150, 22);
             this.TxtNomProjet.TabIndex = 46;
@@ -115,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 119);
+            this.label1.Location = new System.Drawing.Point(115, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 45;
@@ -141,8 +123,6 @@
             this.Controls.Add(this.cbxNomCommercial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtDateProjet);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtNomProjet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnAjouter);
@@ -160,8 +140,6 @@
         private System.Windows.Forms.ComboBox cbxNomCommercial;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtDateProjet;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtNomProjet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAjouter;

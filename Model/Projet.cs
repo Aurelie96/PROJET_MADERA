@@ -22,6 +22,14 @@ namespace Madera.Model
         {
             this.idProjet = id;
         }
+        public Projet(string nom, DateTime date, int idclient,
+            int idcommercial)
+        {
+            this.nomProjet = nom;
+            this.dateProjet = date;
+            this.idClient = idclient;
+            this.idCommercial = idcommercial;
+        }
         public Projet(int id, string nom, DateTime date, string idclient,
             string idcommercial, string iddevis)
         {

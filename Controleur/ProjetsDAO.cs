@@ -47,6 +47,16 @@ namespace Madera.Controleur
             Boolean test = false;
             try
             {
+                connexion.execWrite("INSERT INTO Devis" +
+                    "(nomDevis, dateDevis, quantiteDevis, uniteDevis, " +
+                    "prixHTDevis, prixTTDevis, margeCommercialDevis, margeEntrepriseDevis," +
+                    "idEtat) " +
+                    "VALUES ('"
+                    + projet.nomProjet + "', '"
+                    + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '"
+                    + projet.idClient + "', '"
+                    + projet.idCommercial + "', '"
+                    + projet.idDevis + "');");
                 connexion.execWrite("INSERT INTO Projet" +
                     "(nomProjet, dateProjet, idClient, idCommercial, " +
                     "idDevis) " +

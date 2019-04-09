@@ -60,8 +60,13 @@
             this.dgvEmailClient,
             this.dgvFaxClient,
             this.dgvMobileClient});
+<<<<<<< HEAD
             this.dgv_VueClient.Location = new System.Drawing.Point(12, 148);
             this.dgv_VueClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.dgv_VueClient.Location = new System.Drawing.Point(-1, 119);
+            this.dgv_VueClient.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> DEV_CPT
             this.dgv_VueClient.Name = "dgv_VueClient";
             this.dgv_VueClient.RowTemplate.Height = 24;
             this.dgv_VueClient.Size = new System.Drawing.Size(840, 290);
@@ -111,8 +116,13 @@
             // btnRafraichir
             // 
             this.btnRafraichir.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnRafraichir.Location = new System.Drawing.Point(12, 110);
             this.btnRafraichir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.btnRafraichir.Location = new System.Drawing.Point(9, 78);
+            this.btnRafraichir.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> DEV_CPT
             this.btnRafraichir.Name = "btnRafraichir";
             this.btnRafraichir.Size = new System.Drawing.Size(193, 34);
             this.btnRafraichir.TabIndex = 1;
@@ -135,8 +145,13 @@
             // 
             this.txtRechercherClient.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtRechercherClient.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txtRechercherClient.Location = new System.Drawing.Point(490, 6);
             this.txtRechercherClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtRechercherClient.Location = new System.Drawing.Point(385, 50);
+            this.txtRechercherClient.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> DEV_CPT
             this.txtRechercherClient.Multiline = true;
             this.txtRechercherClient.Name = "txtRechercherClient";
             this.txtRechercherClient.Size = new System.Drawing.Size(217, 29);
@@ -147,8 +162,13 @@
             // 
             this.BtnAjouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAjouter.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.BtnAjouter.Location = new System.Drawing.Point(659, 110);
             this.BtnAjouter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.BtnAjouter.Location = new System.Drawing.Point(485, 78);
+            this.BtnAjouter.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> DEV_CPT
             this.BtnAjouter.Name = "BtnAjouter";
             this.BtnAjouter.Size = new System.Drawing.Size(193, 34);
             this.BtnAjouter.TabIndex = 4;
@@ -183,10 +203,16 @@
             this.Controls.Add(this.btnRafraichir);
             this.Controls.Add(this.dgv_VueClient);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClientView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+=======
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ClientView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+>>>>>>> DEV_CPT
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VueClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

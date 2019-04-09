@@ -46,5 +46,17 @@ namespace Madera.Properties {
                 this["pwd"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool chkRemember {
+            get {
+                return ((bool)(this["chkRemember"]));
+            }
+            set {
+                this["chkRemember"] = value;
+            }
+        }
     }
 }

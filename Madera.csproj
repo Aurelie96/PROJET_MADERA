@@ -135,6 +135,7 @@
     <Compile Include="View\ModificationClientView.Designer.cs">
       <DependentUpon>ModificationClientView.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="View\ModificationProjetView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,13 +160,18 @@
     <Compile Include="View\ProjetView.Designer.cs">
       <DependentUpon>ProjetView.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> DEV_CPT
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="View\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> DEV_CPT
     <EmbeddedResource Include="View\AjouterClientView.resx">
       <DependentUpon>AjouterClientView.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +204,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Properties\Ressources\alarm.png" />
   </ItemGroup>
@@ -1098,5 +1105,8 @@
   <ItemGroup>
     <None Include="Properties\Ressources\zoom_out.png" />
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> DEV_CPT
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

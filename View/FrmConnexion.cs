@@ -27,6 +27,7 @@ namespace Madera.View
         {
             if (CommercialsDAO.ExisteCommercial(tbxIdentifiant.Text, tbxMdp.Text))
             {
+<<<<<<< HEAD
                 Accueil cv = new Accueil(CommercialsDAO.GetInfosCommercial(tbxIdentifiant.Text, tbxMdp.Text));
                 cv.FormClosed += new FormClosedEventHandler(Accueil_FormClosed);
                 if(chkRememberMe.Checked)
@@ -35,6 +36,10 @@ namespace Madera.View
                     Properties.Settings.Default.pwd = tbxMdp.Text;
                     Properties.Settings.Default.Save();
                 }
+=======
+                ClientView cv = new ClientView(CommercialsDAO.GetInfosCommercial(tbxIdentifiant.Text, tbxMdp.Text));
+                cv.FormClosed += new FormClosedEventHandler(ClientView_FormClosed);
+>>>>>>> DEV_CPT
                 this.Hide();
                 cv.ShowDialog();
             }
@@ -75,7 +80,12 @@ namespace Madera.View
             {
                 Properties.Settings.Default.username = tbxIdentifiant.Text;
                 Properties.Settings.Default.pwd = tbxMdp.Text;
+                Properties.Settings.Default.chkRemember = true;
                 Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.Reset();
             }
             this.Close();
         }
@@ -93,6 +103,7 @@ namespace Madera.View
             {
                 tbxIdentifiant.Text = Properties.Settings.Default.username;
                 tbxMdp.Text = Properties.Settings.Default.pwd;
+                chkRememberMe.Checked = Properties.Settings.Default.chkRemember;
             }
         }
     }

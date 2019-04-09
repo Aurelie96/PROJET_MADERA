@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpConnexion = new System.Windows.Forms.GroupBox();
+            this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.lblMdp = new System.Windows.Forms.Label();
             this.tbxMdp = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@
             this.tbxIdentifiant = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.grpConnexion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,27 @@
             this.grpConnexion.TabStop = false;
             this.grpConnexion.Text = "Connexion";
             // 
+            // chkRememberMe
+            // 
+            this.chkRememberMe.AutoSize = true;
+            this.chkRememberMe.Location = new System.Drawing.Point(10, 160);
+            this.chkRememberMe.Name = "chkRememberMe";
+            this.chkRememberMe.Size = new System.Drawing.Size(165, 24);
+            this.chkRememberMe.TabIndex = 4;
+            this.chkRememberMe.Text = "Se souvenir de moi";
+            this.chkRememberMe.UseVisualStyleBackColor = true;
+            // 
             // btnConnexion
             // 
             this.btnConnexion.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnexion.Location = new System.Drawing.Point(234, 225);
+            this.btnConnexion.Image = global::Madera.Properties.Resources.user;
+            this.btnConnexion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnConnexion.Location = new System.Drawing.Point(234, 215);
             this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(140, 30);
+            this.btnConnexion.Size = new System.Drawing.Size(140, 40);
             this.btnConnexion.TabIndex = 2;
             this.btnConnexion.Text = "&Se connecter";
+            this.btnConnexion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConnexion.UseVisualStyleBackColor = true;
             this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
@@ -116,23 +129,13 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::Madera.Properties.Resources.close;
             this.btnClose.Location = new System.Drawing.Point(362, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // chkRememberMe
-            // 
-            this.chkRememberMe.AutoSize = true;
-            this.chkRememberMe.Location = new System.Drawing.Point(10, 160);
-            this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(165, 24);
-            this.chkRememberMe.TabIndex = 4;
-            this.chkRememberMe.Text = "Se souvenir de moi";
-            this.chkRememberMe.UseVisualStyleBackColor = true;
             // 
             // FrmConnexion
             // 

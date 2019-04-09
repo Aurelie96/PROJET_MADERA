@@ -17,8 +17,26 @@ namespace Madera.View
         public AjouterClientView()
         {
             InitializeComponent();
+            TxtNomClient.GotFocus += TxtNomClient_GotFocus; ;
+            TxtNomClient.LostFocus += TxtNomClient_LostFocus;
         }
-        
+
+        private void TxtNomClient_GotFocus(object sender, EventArgs e)
+        {
+            if (TxtNomClient.Text == "Dupond")
+                TxtNomClient.Text = "";
+            TxtNomClient.ForeColor = Color.Black;
+        }
+
+        private void TxtNomClient_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtNomClient.Text))
+            {
+                TxtNomClient.Text = "Dupond";
+                TxtNomClient.ForeColor = Color.Gray;
+            }
+        }
+
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
             Client LeClient = new Client(
@@ -32,6 +50,11 @@ namespace Madera.View
                 txtMobileClient.Text);
             ClientsDAO.CreerClient(LeClient);
             ClientsDAO.ChargerClient();
+        }
+
+        private void AjouterClientView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,6 +42,7 @@ C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csproj.CopyComplete
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.exe
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.pdb
 C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.csprojAssemblyReference.cache
+<<<<<<< HEAD
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.exe.config
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.exe
 D:\Autre\PROJET_MADERA\bin\Debug\Madera.pdb
@@ -81,3 +82,6 @@ D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.csproj.CopyComplete
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.exe
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.pdb
 D:\Autre\PROJET_MADERA-1\obj\Debug\Madera.View.AjouterProjetView.resources
+=======
+C:\Users\asus\source\repos\PROJET_MADERA\obj\Debug\Madera.Properties.Resources.resources
+>>>>>>> DEV_CPT

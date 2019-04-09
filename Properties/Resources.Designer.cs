@@ -65,7 +65,11 @@ namespace Madera.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _lock {
             get {
+<<<<<<< HEAD
                 object obj = ResourceManager.GetObject("_lock", resourceCulture);
+=======
+                object obj = ResourceManager.GetObject("lock", resourceCulture);
+>>>>>>> DEV_CPT
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
